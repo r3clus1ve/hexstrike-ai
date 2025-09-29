@@ -17294,7 +17294,7 @@ try:
         if 'render_vulnerability_card' in globals() and not hasattr(ModernVisualEngine, 'render_vulnerability_card'):
             render_vulnerability_card = staticmethod(globals()['render_vulnerability_card'])
         if 'create_summary_report' in globals() and not hasattr(ModernVisualEngine, 'create_summary_report'):
-            create_summary_report = staticmethod(globals()['create_summary_report'])
+            ModernVisualEngine.create_summary_report = staticmethod(globals()['create_summary_report'])
 except Exception:
     import logging
     logging.getLogger(__name__).exception("Failed to attach visual functions to ModernVisualEngine")
